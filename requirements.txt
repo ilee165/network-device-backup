@@ -1,0 +1,18 @@
+# Core dependencies
+netmiko>=4.3.0
+GitPython>=3.1.40
+PyYAML>=6.0.1
+python-dotenv>=1.0.0
+
+# Scheduling
+APScheduler>=3.10.4
+
+# CLI
+click>=8.1.7
+
+# Logging
+colorlog>=6.8.0
+
+# Optional - for future features
+# requests>=2.31.0  # For API calls
+# jinja2>=3.1.2     # For templating
