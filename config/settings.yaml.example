@@ -1,0 +1,50 @@
+# Network Backup Settings
+# Copy this file to settings.yaml and customize
+
+backup:
+  # Where to store the Git repository
+  repository_path: ./backups/repo
+  
+  # Number of devices to backup concurrently
+  concurrent_backups: 3
+  
+  # SSH timeout in seconds
+  timeout_seconds: 30
+  
+  # Number of retry attempts on failure
+  retry_attempts: 3
+  
+  # Delay between retries in seconds
+  retry_delay_seconds: 5
+
+schedule:
+  # Enable scheduled backups
+  enabled: false
+  
+  # Cron expression: "minute hour day month day_of_week"
+  # Default: 2 AM daily
+  cron_expression: "0 2 * * *"
+
+notifications:
+  email:
+    enabled: false
+    smtp_server: smtp.gmail.com
+    smtp_port: 587
+    smtp_use_tls: true
+    from_address: backup@dwsolution.com
+    to_addresses:
+      - admin@company.com
+    # Email credentials
+    username_env: EMAIL_USERNAME
+    password_env: EMAIL_PASSWORD
+    
+  slack:
+    enabled: false
+    webhook_url_env: SLACK_WEBHOOK_URL
+
+logging:
+  level: INFO  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  file: ./logs/netbackup.log
+  console: true
+  max_bytes: 10485760  # 10MB
+  backup_count: 5

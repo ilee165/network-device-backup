@@ -1,0 +1,31 @@
+# Network Device Inventory
+# Copy this file to devices.yaml and customize for your environment
+
+devices:
+  - name: lab-switch-01
+    hostname: 192.168.1.10
+    device_type: cisco_ios
+    groups:
+      - lab
+      - switches
+    enabled: true
+    
+  - name: lab-router-01
+    hostname: 192.168.1.1
+    device_type: cisco_ios
+    groups:
+      - lab
+      - routers
+    enabled: true
+
+# Credentials Configuration
+# Use environment variables for security
+credentials:
+  default:
+    username_env: NET_USERNAME
+    password_env: NET_PASSWORD
+    
+  # Optional: device-specific credentials
+  # lab-switch-01:
+  #   username_env: SWITCH_USERNAME
+  #   password_env: SWITCH_PASSWORD
